@@ -33,4 +33,4 @@ have to come up with a data structure for the classes required and communication
 - What you would improve in the next iteration.
 
 Please share your solution via a public repository on GitHub or a ZIP file via
-email. Make sure to also add the ``.git`` folder into your ZIP file.
+email. Make sure to also include the ``.git`` folder in your ZIP file.
