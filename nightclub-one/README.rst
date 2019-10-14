@@ -13,12 +13,14 @@ The following criteria must be met:
 
 - Age configuration must be configurable,
 - An appropriate message / object must be returned,
+- Positive, negative and edge-case tests are required,
 - All tests must pass,
 - Source code can be either Java or Kotlin.
 
 Implement the given interface, that can help the night club make sure all their
 guests are of legal age. It is essential to check the class does not make
-mistakes to avoid legal prosecution.
+mistakes to avoid legal prosecution. Please follow TDD principles and make sure
+it is evident in the git tree.
 
 Please share your solution via a public repository on GitHub or a ZIP file via
 email. Make sure to also add the ``.git`` folder into your ZIP file.

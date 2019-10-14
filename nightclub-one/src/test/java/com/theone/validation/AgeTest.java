@@ -11,46 +11,16 @@ import java.time.LocalDate;
 
 @DisplayName("Age Test")
 class AgeTest {
-    AgeInterface ageVerifier = null;
-
-    @BeforeEach
-    void init() {
-        this.ageVerifier = new Age();
-    }
-
     @Test
-    void testGetAgeCorrect() {
+    void testAllowedToDrink() {
         LocalDate cDate = LocalDate.of(2019, 10, 11);
         Age ownAgeVerifier = new Age(cDate);
 
-        LocalDate bDate = LocalDate.of(2000, 1, 1);
-
-        int age = ownAgeVerifier.getAge(bDate);
-
-        assertEquals(19, age, "calculated age is wrong");
-    }
-
-    @Test
-    void testGetAgeWrongBelow() {
-        LocalDate cDate = LocalDate.of(2019, 10, 11);
-        Age ownAgeVerifier = new Age(cDate);
-
-        LocalDate bDate = LocalDate.of(2001, 1, 1);
-
-        int age = ownAgeVerifier.getAge(bDate);
-
-        assertNotEquals(19, age, "calculated age is wrong");
-    }
-
-    @Test
-    void testGetAgeWrongAbove() {
-        LocalDate cDate = LocalDate.of(2019, 10, 11);
-        Age ownAgeVerifier = new Age(cDate);
-
-        LocalDate bDate = LocalDate.of(1999, 1, 1);
-
-        int age = ownAgeVerifier.getAge(bDate);
-
-        assertNotEquals(19, age, "calculated age is wrong");
+        LocalDate bDate = LocalDate.of(2002, 1, 1);
+        assertTrue(ownAgeVerifier.allowedToDrink(bDate, AgeInterface.DRINKING_AGE_GROUP.SOFT_ALCOHOL), "allowed to drink");
+        bDate = LocalDate.of(2000, 1, 1);
+        assertTrue(ownAgeVerifier.allowedToDrink(bDate, AgeInterface.DRINKING_AGE_GROUP.SOFT_ALCOHOL), "allowed to drink");
+        bDate = LocalDate.of(2005, 1, 1);
+        assertFalse(ownAgeVerifier.allowedToDrink(bDate, AgeInterface.DRINKING_AGE_GROUP.SOFT_ALCOHOL), "not allowed to drink");
     }
 }
