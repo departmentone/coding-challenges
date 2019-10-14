@@ -23,7 +23,7 @@ mistakes to avoid legal prosecution. Please follow TDD principles and make sure
 it is evident in the git tree.
 
 Please share your solution via a public repository on GitHub or a ZIP file via
-email. Make sure to also add the ``.git`` folder into your ZIP file.
+email. Make sure to also include the ``.git`` folder in your ZIP file.
 
 How To Run Tests
 ****************
